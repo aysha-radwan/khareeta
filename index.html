@@ -115,7 +115,7 @@
   <div class="eyebrow">هدية من ألكون · مجاناً · بدون شروط</div>
   <h1>خريطة الكون للاستقلالية</h1>
   <div class="lead">
-    <p>أهلاً أحباء الكون، <b class="hi">شكراً لمتابعتك المستمرة</b> رغم تغيُّر نوع المحتوى واللغة.</p>
+    <p>أهلاً أحباء الكون، <b class="hi">شكراً لمتابعتك المستمرة</b> رغم تغيُّر نوع المحتوى واللغة اللي أقدم فيها المحتوى.</p>
     <p>كعلامة لامتناني لمتابعتك المستمرة، أقدم لك هذا البرنامج اللي استثمرت فيه جهد، وقت، خبرة ومال، <b class="hi">مجاناً</b>.</p>
     <p>كل اللي تحتاجيه لاستقلاليتك العاطفية، الفكرية والمادية موجود داخل هذا البرنامج. خريطة كاملة ترشدك لهدفك، من أ إلى ب.</p>
     <p>رسالتي دائماً واحدة: الوعي، النمو والتغيير المستمر.</p>
@@ -131,7 +131,7 @@
 </header>
 
 <nav class="map" aria-label="خريطة المسار">
-  <div class="k">الخريطة — أربع محطات، اضغطي على أي وحدة</div>
+  <div class="k">ابدأي من المرحلة المناسبة لك من هذه الخريطة</div>
   <div class="mapprog" id="mapprog">خريطتك تنوّر كل ما شاهدتي جزء — <b>٠</b> من ١٩</div>
   <svg viewBox="0 0 1020 260" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -494,7 +494,7 @@
       cards.forEach(function (c) { if (seen.indexOf(c.getAttribute("data-id")) > -1) { c.classList.add("seen"); k++; } });
       total += n; done += k;
       var pt = sec.querySelector(".prog .pt"), bar = sec.querySelector(".prog .bar i");
-      if (pt) pt.textContent = k === 0 ? "ما بدأتي هذي المرحلة بعد" : (k === n ? "خلّصتي هذي المرحلة ✦" : "شاهدتي " + ar(k) + " من " + ar(n));
+      if (pt) pt.textContent = k === 0 ? "لم تبدأي هذه المرحلة بعد" : (k === n ? "خلّصتي هذي المرحلة ✦" : "شاهدتي " + ar(k) + " من " + ar(n));
       if (bar) bar.style.width = Math.round(100 * k / n) + "%";
       var ring = document.querySelector('.ringfill[data-mod="' + sec.id + '"]');
       if (ring) ring.setAttribute("stroke-dasharray", Math.round(214 * k / n) + " 214");
