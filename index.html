@@ -28,13 +28,13 @@
     radial-gradient(60% 50% at 50% 100%, rgba(207,103,105,0.14) 0%, transparent 60%),
     radial-gradient(120% 60% at 50% 0%, var(--bg-top) 0%, var(--bg) 62%);}
   .sky canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto}
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto}
 
   header.hero{text-align:center;padding:56px 0 30px}
   .logo{width:150px;height:auto;display:block;margin:0 auto 22px;opacity:.95}
   .eyebrow{font-size:15px;color:var(--peach);letter-spacing:.3px;margin-bottom:12px;font-weight:500}
   h1{font-family:var(--ar);font-size:60px;line-height:1.2;font-weight:700;margin-bottom:16px;text-wrap:balance}
-  .lead{font-family:var(--ar);font-size:20px;line-height:1.8;color:var(--ink-2);max-width:860px;margin:0 auto;display:grid;gap:8px;text-wrap:pretty}
+  .lead{font-family:var(--ar);font-size:19.5px;line-height:1.75;color:var(--ink-2);max-width:none;margin:0 auto;display:grid;gap:6px;text-wrap:pretty}
   .lead b.hi{color:var(--peach);font-weight:700;font-size:1.14em}
   .sig{margin-top:18px;font-family:var(--ar);font-size:19px;color:var(--ink-2)}
   .ig{display:inline-flex;align-items:center;gap:8px;direction:ltr;margin-top:12px;padding:9px 18px 9px 14px;border-radius:999px;border:1px solid rgba(247,182,155,0.55);color:var(--peach);text-decoration:none;font-family:"Tajawal",-apple-system,sans-serif;font-size:16px;font-weight:700;letter-spacing:.2px;background:rgba(20,26,58,0.6);backdrop-filter:blur(6px)}
@@ -77,6 +77,21 @@
   .meta h3{font-family:var(--ar);font-size:19px;font-weight:700;line-height:1.35;flex:1}
   .med{font-size:12px;color:#171936;background:var(--mc);border-radius:999px;padding:3px 10px;font-weight:700;white-space:nowrap}
 
+  /* your map fills in as you watch */
+  .star{position:absolute;top:10px;left:10px;z-index:2;width:30px;height:30px;border-radius:50%;background:rgba(10,14,36,0.85);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.18)}
+  .star svg{width:16px;height:16px;fill:none;stroke:rgba(255,255,255,0.55);stroke-width:1.4}
+  .lesson.seen .star{border-color:var(--mc);box-shadow:0 0 16px var(--mg)}
+  .lesson.seen .star svg{fill:var(--mc);stroke:var(--mc)}
+  .lesson.seen .thumb img{opacity:.55}
+  .prog{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin-top:8px}
+  .prog .bar{flex:1;height:4px;border-radius:99px;background:rgba(255,255,255,0.1);overflow:hidden;max-width:220px}
+  .prog .bar i{display:block;height:100%;width:0;background:var(--mc);border-radius:99px;transition:width .4s ease}
+  .mapprog{text-align:center;font-family:var(--ar);font-size:17px;color:var(--ink-2);margin:2px 0 8px}
+  .mapprog b{color:var(--peach)}
+  .divider{display:block;width:100%;height:auto;margin:54px auto -30px;max-width:520px;opacity:.7}
+  .med.moon svg{width:12px;height:12px;vertical-align:-1px;margin-left:4px;fill:#171936}
+  .map .ring{fill:none;stroke:rgba(255,255,255,0.12);stroke-width:3}
+  .map .ringfill{fill:none;stroke:var(--peach);stroke-width:3;stroke-linecap:round;transform-origin:center;transform:rotate(-90deg);transition:stroke-dasharray .5s ease}
   footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:15.5px;line-height:1.9}
   footer img{width:74px;display:block;margin:0 auto 12px;opacity:.85}
   footer a{color:var(--peach);text-decoration:none}
@@ -117,6 +132,7 @@
 
 <nav class="map" aria-label="خريطة المسار">
   <div class="k">الخريطة — أربع محطات، اضغطي على أي وحدة</div>
+  <div class="mapprog" id="mapprog">خريطتك تنوّر كل ما شاهدتي جزء — <b>٠</b> من ١٩</div>
   <svg viewBox="0 0 1020 260" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <radialGradient id="g1" cx="35%" cy="35%"><stop offset="0" stop-color="#e3d9ff"/><stop offset="1" stop-color="#6a4fc7"/></radialGradient>
@@ -125,10 +141,10 @@
       <radialGradient id="g4" cx="35%" cy="35%"><stop offset="0" stop-color="#d6e4ff"/><stop offset="1" stop-color="#3f63c4"/></radialGradient>
     </defs>
 <path d="M900,150 C 800,60 730,60 640,80 S 460,160 370,150 S 200,60 120,90" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" stroke-dasharray="4 6"/>
-<a href="#fikriya"><g transform="translate(860,110)"><circle cx="40" cy="40" r="22" fill="url(#g1)"/><ellipse cx="40" cy="40" rx="34" ry="9" fill="none" stroke="#bfa9f2" stroke-width="1.5" opacity=".8" transform="rotate(-18 40 40)"/></g><text x="900" y="218" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية الفكرية</text><text x="900" y="242" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٦ أجزاء</text></a>
-<a href="#atifiya"><g transform="translate(600,40)"><circle cx="40" cy="40" r="22" fill="url(#g2)"/><circle cx="31" cy="32" r="5" fill="rgba(255,255,255,0.22)"/><circle cx="48" cy="46" r="3" fill="rgba(255,255,255,0.18)"/></g><text x="640" y="148" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية العاطفية</text><text x="640" y="172" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٥ أجزاء</text></a>
-<a href="#madiya"><g transform="translate(330,110)"><circle cx="40" cy="40" r="20" fill="url(#g3)"/><ellipse cx="40" cy="40" rx="32" ry="7" fill="none" stroke="#f7b69b" stroke-width="1.5" opacity=".9"/><ellipse cx="40" cy="40" rx="27" ry="5" fill="none" stroke="#f7b69b" stroke-width="1" opacity=".5"/></g><text x="370" y="218" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية المادية</text><text x="370" y="242" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٦ أجزاء</text></a>
-<a href="#ahl"><g transform="translate(80,50)"><circle cx="40" cy="40" r="22" fill="url(#g4)"/><circle cx="66" cy="24" r="5" fill="#e9e8f3"/><circle cx="14" cy="58" r="3" fill="#e9e8f3" opacity=".8"/></g><text x="120" y="158" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">التعامل مع حاجز الأهل</text><text x="120" y="182" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٢ أجزاء</text></a>
+<a href="#fikriya"><circle class="ring" cx="900" cy="150" r="34"/><circle class="ringfill" data-mod="fikriya" cx="900" cy="150" r="34" stroke-dasharray="0 214" style="transform-box:fill-box"/><g transform="translate(860,110)"><circle cx="40" cy="40" r="22" fill="url(#g1)"/><ellipse cx="40" cy="40" rx="34" ry="9" fill="none" stroke="#bfa9f2" stroke-width="1.5" opacity=".8" transform="rotate(-18 40 40)"/></g><text x="900" y="218" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية الفكرية</text><text x="900" y="242" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٦ أجزاء</text></a>
+<a href="#atifiya"><circle class="ring" cx="640" cy="80" r="34"/><circle class="ringfill" data-mod="atifiya" cx="640" cy="80" r="34" stroke-dasharray="0 214" style="transform-box:fill-box"/><g transform="translate(600,40)"><circle cx="40" cy="40" r="22" fill="url(#g2)"/><circle cx="31" cy="32" r="5" fill="rgba(255,255,255,0.22)"/><circle cx="48" cy="46" r="3" fill="rgba(255,255,255,0.18)"/></g><text x="640" y="148" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية العاطفية</text><text x="640" y="172" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٥ أجزاء</text></a>
+<a href="#madiya"><circle class="ring" cx="370" cy="150" r="34"/><circle class="ringfill" data-mod="madiya" cx="370" cy="150" r="34" stroke-dasharray="0 214" style="transform-box:fill-box"/><g transform="translate(330,110)"><circle cx="40" cy="40" r="20" fill="url(#g3)"/><ellipse cx="40" cy="40" rx="32" ry="7" fill="none" stroke="#f7b69b" stroke-width="1.5" opacity=".9"/><ellipse cx="40" cy="40" rx="27" ry="5" fill="none" stroke="#f7b69b" stroke-width="1" opacity=".5"/></g><text x="370" y="218" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">الاستقلالية المادية</text><text x="370" y="242" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٦ أجزاء</text></a>
+<a href="#ahl"><circle class="ring" cx="120" cy="90" r="34"/><circle class="ringfill" data-mod="ahl" cx="120" cy="90" r="34" stroke-dasharray="0 214" style="transform-box:fill-box"/><g transform="translate(80,50)"><circle cx="40" cy="40" r="22" fill="url(#g4)"/><circle cx="66" cy="24" r="5" fill="#e9e8f3"/><circle cx="14" cy="58" r="3" fill="#e9e8f3" opacity=".8"/></g><text x="120" y="158" text-anchor="middle" font-size="22" fill="#fff" font-family="Amiri, serif">التعامل مع حاجز الأهل</text><text x="120" y="182" text-anchor="middle" font-size="14" fill="#abb2da" font-family="Tajawal, sans-serif">٢ أجزاء</text></a>
   </svg>
 </nav>
 
@@ -138,6 +154,7 @@
     <div class="mod-title">
       <div class="k">المرحلة الأولى · ٦ أجزاء · ٤٩ دقيقة</div>
       <h2>الاستقلالية الفكرية</h2>
+      <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
     </div>
   </div>
   <div class="lessons">
@@ -146,6 +163,7 @@
           <img src="https://i.ytimg.com/vi/dv9Ard1doX8/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٥:٣٦</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">١</span>
         </button>
         <div class="meta"><h3>الجزء الأول</h3></div>
@@ -155,6 +173,7 @@
           <img src="https://i.ytimg.com/vi/ihrfjjVT4gY/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٥:٤٤</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٢</span>
         </button>
         <div class="meta"><h3>الجزء الثاني</h3></div>
@@ -164,6 +183,7 @@
           <img src="https://i.ytimg.com/vi/mcHZhP3tVuQ/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٥:٠٧</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٣</span>
         </button>
         <div class="meta"><h3>الجزء الثالث</h3></div>
@@ -173,6 +193,7 @@
           <img src="https://i.ytimg.com/vi/50cuC8T8xjM/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٧:٠٧</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٤</span>
         </button>
         <div class="meta"><h3>الجزء الرابع</h3></div>
@@ -182,6 +203,7 @@
           <img src="https://i.ytimg.com/vi/4akqDYfbRqs/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٨:٥٠</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٥</span>
         </button>
         <div class="meta"><h3>الجزء الخامس</h3></div>
@@ -191,18 +213,21 @@
           <img src="https://i.ytimg.com/vi/Pv0PR6jD1hs/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٦:٤٨</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٦</span>
         </button>
         <div class="meta"><h3>الجزء السادس</h3></div>
       </article>
   </div>
 </section>
+<svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="atifiya" style="--mc:#cf6769;--mg:rgba(207,103,105,0.35)">
   <div class="mod-head">
     <div class="planet"><svg viewBox="0 0 80 80" width="96" height="96" aria-hidden="true"><circle cx="40" cy="40" r="22" fill="url(#g2)"/><circle cx="31" cy="32" r="5" fill="rgba(255,255,255,0.22)"/><circle cx="48" cy="46" r="3" fill="rgba(255,255,255,0.18)"/></svg></div>
     <div class="mod-title">
       <div class="k">المرحلة الثانية · ٥ أجزاء · ٤٥ دقيقة</div>
       <h2>الاستقلالية العاطفية</h2>
+      <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
     </div>
   </div>
   <div class="lessons">
@@ -211,6 +236,7 @@
           <img src="https://i.ytimg.com/vi/ypqMpJul_u4/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٦:٥٦</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">١</span>
         </button>
         <div class="meta"><h3>الجزء الأول</h3></div>
@@ -220,6 +246,7 @@
           <img src="https://i.ytimg.com/vi/iqIeEwggdPM/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٩:٣٠</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٢</span>
         </button>
         <div class="meta"><h3>الجزء الثاني</h3></div>
@@ -229,6 +256,7 @@
           <img src="https://i.ytimg.com/vi/dCotDS0_r-M/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٩:٥٩</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٣</span>
         </button>
         <div class="meta"><h3>الجزء الثالث</h3></div>
@@ -238,27 +266,31 @@
           <img src="https://i.ytimg.com/vi/RxWv1LcB5Ek/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٨:٢٠</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٤</span>
         </button>
-        <div class="meta"><h3>الجزء الرابع</h3><span class="med">تأمل</span></div>
+        <div class="meta"><h3>الجزء الرابع</h3><span class="med moon">تأمل<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"/></svg></span></div>
       </article>
       <article class="lesson" data-id="0Q3a9kNS-5I">
         <button type="button" class="thumb" aria-label="تشغيل الجزء الخامس">
           <img src="https://i.ytimg.com/vi/0Q3a9kNS-5I/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٠:٣٠</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٥</span>
         </button>
         <div class="meta"><h3>الجزء الخامس</h3></div>
       </article>
   </div>
 </section>
+<svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="madiya" style="--mc:#f7b69b;--mg:rgba(247,182,155,0.35)">
   <div class="mod-head">
     <div class="planet"><svg viewBox="0 0 80 80" width="96" height="96" aria-hidden="true"><circle cx="40" cy="40" r="20" fill="url(#g3)"/><ellipse cx="40" cy="40" rx="32" ry="7" fill="none" stroke="#f7b69b" stroke-width="1.5" opacity=".9"/><ellipse cx="40" cy="40" rx="27" ry="5" fill="none" stroke="#f7b69b" stroke-width="1" opacity=".5"/></svg></div>
     <div class="mod-title">
       <div class="k">المرحلة الثالثة · ٦ أجزاء · ٦٨ دقيقة</div>
       <h2>الاستقلالية المادية</h2>
+      <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
     </div>
   </div>
   <div class="lessons">
@@ -267,6 +299,7 @@
           <img src="https://i.ytimg.com/vi/djw00n9E7Po/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٣:٤٦</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">١</span>
         </button>
         <div class="meta"><h3>الجزء الأول</h3></div>
@@ -276,15 +309,17 @@
           <img src="https://i.ytimg.com/vi/tH8U7ESglEA/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٦:١٤</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٢</span>
         </button>
-        <div class="meta"><h3>الجزء الثاني</h3><span class="med">تأمل</span></div>
+        <div class="meta"><h3>الجزء الثاني</h3><span class="med moon">تأمل<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"/></svg></span></div>
       </article>
       <article class="lesson" data-id="H1iX67M_718">
         <button type="button" class="thumb" aria-label="تشغيل الجزء الثالث">
           <img src="https://i.ytimg.com/vi/H1iX67M_718/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٧:٢٣</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٣</span>
         </button>
         <div class="meta"><h3>الجزء الثالث</h3></div>
@@ -294,6 +329,7 @@
           <img src="https://i.ytimg.com/vi/-9frWC0j1hE/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١١:٣٥</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٤</span>
         </button>
         <div class="meta"><h3>الجزء الرابع</h3></div>
@@ -303,6 +339,7 @@
           <img src="https://i.ytimg.com/vi/Nxr0AZT2W_o/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٧:٠١</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٥</span>
         </button>
         <div class="meta"><h3>الجزء الخامس</h3></div>
@@ -312,18 +349,21 @@
           <img src="https://i.ytimg.com/vi/VMaDPYNt1mU/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٢:٢٣</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٦</span>
         </button>
         <div class="meta"><h3>الجزء السادس</h3></div>
       </article>
   </div>
 </section>
+<svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="ahl" style="--mc:#8fb4ff;--mg:rgba(143,180,255,0.35)">
   <div class="mod-head">
     <div class="planet"><svg viewBox="0 0 80 80" width="96" height="96" aria-hidden="true"><circle cx="40" cy="40" r="22" fill="url(#g4)"/><circle cx="66" cy="24" r="5" fill="#e9e8f3"/><circle cx="14" cy="58" r="3" fill="#e9e8f3" opacity=".8"/></svg></div>
     <div class="mod-title">
       <div class="k">المرحلة الرابعة · ٢ أجزاء · ٤٥ دقيقة</div>
       <h2>التعامل مع حاجز الأهل</h2>
+      <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
     </div>
   </div>
   <div class="lessons">
@@ -332,6 +372,7 @@
           <img src="https://i.ytimg.com/vi/KNwP60zce-M/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">٢٥:٢٥</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">١</span>
         </button>
         <div class="meta"><h3>ملخص التعامل مع حاجز الأهل</h3></div>
@@ -341,6 +382,7 @@
           <img src="https://i.ytimg.com/vi/stg84dZZ_8Y/hq720.jpg" alt="" loading="lazy" width="1280" height="720" />
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="dur">١٩:٤٠</span>
+          <span class="star" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></span>
           <span class="idx">٢</span>
         </button>
         <div class="meta"><h3>التعامل مع حاجز الأهل — الجزء الأول</h3></div>
@@ -373,7 +415,7 @@
   const TILT = -0.22, SQUASH = 0.42;
   const PLANET = ["#f7b69b", "#bfa9f2", "#cf6769", "#ffffff", "#8fb4ff", "#abb2da"];
   const STAR = ["#ffffff", "#dfe4ff", "#abb2da", "#bfa9f2"];
-  let rings = [], stars = [], w = 0, h = 0, cx = 0, cy = 0, unit = 0;
+  let rings = [], stars = [], w = 0, h = 0, cx = 0, cy = 0, unit = 0, meteor = null, nextMeteor = 4;
   let raf = null, last = 0, t = 0;
   function seed(){
     cx = w * 0.78; cy = h * 0.30; unit = Math.max(w, h) * 0.115;
@@ -397,6 +439,18 @@
     if (last && now - last < 30) return;
     const dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016; last = now; t += dt * RATE;
     ctx.clearRect(0, 0, w, h);
+    // now and then a shooting star crosses the sky
+    nextMeteor -= dt; 
+    if (!meteor && nextMeteor <= 0){ meteor = { x: Math.random() * w * 0.8, y: Math.random() * h * 0.4, vx: -(260 + Math.random() * 160), vy: 120 + Math.random() * 80, life: 0 }; nextMeteor = (calm ? 14 : 7) + Math.random() * 8; }
+    if (meteor){
+      meteor.life += dt; meteor.x += meteor.vx * dt; meteor.y += meteor.vy * dt;
+      const a = Math.max(0, 1 - meteor.life / 1.1);
+      const g = ctx.createLinearGradient(meteor.x, meteor.y, meteor.x - meteor.vx * 0.35, meteor.y - meteor.vy * 0.35);
+      g.addColorStop(0, "rgba(255,255,255," + (0.9 * a) + ")"); g.addColorStop(1, "rgba(247,182,155,0)");
+      ctx.globalAlpha = 1; ctx.strokeStyle = g; ctx.lineWidth = 1.6; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(meteor.x, meteor.y); ctx.lineTo(meteor.x - meteor.vx * 0.35, meteor.y - meteor.vy * 0.35); ctx.stroke();
+      if (meteor.life > 1.1) meteor = null;
+    }
     for (const s of stars){
       s.x -= s.dx * dt * 2 * RATE; if (s.x < -2) s.x = w + 2;      // a slow sideways drift, like a sky turning
       const tw = 0.65 + 0.35 * Math.sin(t * 1.2 + s.tw);
@@ -428,11 +482,34 @@
 })();
 </script>
 <script>
+  // Your map remembers what you've watched — on this phone only, never sent anywhere.
+  var AR = "٠١٢٣٤٥٦٧٨٩";
+  function ar(n){ return String(n).replace(/\d/g, function(d){ return AR[d]; }); }
+  function loadSeen(){ try { return JSON.parse(localStorage.getItem("khareeta.seen") || "[]"); } catch (e) { return []; } }
+  function saveSeen(a){ try { localStorage.setItem("khareeta.seen", JSON.stringify(a)); } catch (e) {} }
+  function refresh(){
+    var seen = loadSeen(), total = 0, done = 0;
+    document.querySelectorAll("section.mod").forEach(function (sec) {
+      var cards = sec.querySelectorAll(".lesson"), n = cards.length, k = 0;
+      cards.forEach(function (c) { if (seen.indexOf(c.getAttribute("data-id")) > -1) { c.classList.add("seen"); k++; } });
+      total += n; done += k;
+      var pt = sec.querySelector(".prog .pt"), bar = sec.querySelector(".prog .bar i");
+      if (pt) pt.textContent = k === 0 ? "ما بدأتي هذي المرحلة بعد" : (k === n ? "خلّصتي هذي المرحلة ✦" : "شاهدتي " + ar(k) + " من " + ar(n));
+      if (bar) bar.style.width = Math.round(100 * k / n) + "%";
+      var ring = document.querySelector('.ringfill[data-mod="' + sec.id + '"]');
+      if (ring) ring.setAttribute("stroke-dasharray", Math.round(214 * k / n) + " 214");
+    });
+    var mp = document.getElementById("mapprog");
+    if (mp) mp.innerHTML = (done === 0 ? "خريطتك تنوّر كل ما شاهدتي جزء — " : (done === total ? "خلّصتي الخريطة كلها ✦ — " : "خريطتك تنوّر — ")) + "<b>" + ar(done) + "</b> من " + ar(total);
+  }
+  function markSeen(card, id){ var seen = loadSeen(); if (seen.indexOf(id) < 0) { seen.push(id); saveSeen(seen); } refresh(); }
+  refresh();
   // Tap a thumbnail → the YouTube player loads in its place. Nothing loads until it's tapped.
   document.querySelectorAll(".lesson").forEach(function (card) {
     var id = card.getAttribute("data-id");
     var btn = card.querySelector(".thumb");
     btn.addEventListener("click", function () {
+      markSeen(card, id);
       var f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&modestbranding=1&hl=ar";
       f.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
