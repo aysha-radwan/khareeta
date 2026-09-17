@@ -90,6 +90,16 @@
   .mapprog b{color:var(--peach)}
   .divider{display:block;width:100%;height:auto;margin:54px auto -30px;max-width:520px;opacity:.7}
   .med.moon svg{width:12px;height:12px;vertical-align:-1px;margin-left:4px;fill:#171936}
+
+  .vids-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:9px 18px;border-radius:999px;border:1px solid rgba(247,182,155,0.55);background:rgba(20,26,58,0.6);color:var(--peach);font-family:"Tajawal",-apple-system,sans-serif;font-size:15px;font-weight:700;cursor:pointer;backdrop-filter:blur(6px);transition:background .2s,color .2s}
+  .vids-btn:hover{background:var(--peach);color:#171936}
+  .vids-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+  .mod.open .vids-btn svg{transform:rotate(180deg)}
+  .mod.open .vids-btn{background:var(--peach);color:#171936}
+  .mod .lessons{display:none}
+  .mod.open .lessons{display:grid;animation:vids-in .35s ease;margin-bottom:22px}
+  @keyframes vids-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (max-width:560px){.vids-btn{width:100%;justify-content:center;padding:12px 18px;font-size:16px}}
   .map .ring{fill:none;stroke:rgba(255,255,255,0.12);stroke-width:3}
   .map .ringfill{fill:none;stroke:var(--peach);stroke-width:3;stroke-linecap:round;transform-origin:center;transform:rotate(-90deg);transition:stroke-dasharray .5s ease}
   .brief{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin-bottom:18px}
@@ -168,11 +178,8 @@
       <div class="k">المرحلة الأولى · ٦ أجزاء · ٤٩ دقيقة</div>
       <h2>الاستقلالية الفكرية</h2>
       <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
+      <button type="button" class="vids-btn" aria-expanded="false"><span class="vt">عرض الفيديوهات</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
     </div>
-  </div>
-  <div class="brief">
-    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-compass"/></svg></span><span>الأساس: إيش معنى الاستقلالية، وليش ما تكتمل إلا لما تكون فكرية وعاطفية ومادية مع بعض — حتى لو كنتِ متزوجة أو في بيت أهلك.</span></li><li><span class="ic"><svg><use href="#i-clock"/></svg></span><span>تتعرفي على حقيقتك من ثلاث جهات: ماضيك، حاضرك، ومستقبلك.</span></li><li><span class="ic"><svg><use href="#i-gem"/></svg></span><span>تفرّقي بين قيمك وأهدافك، وتحطي رؤية واضحة.</span></li><li><span class="ic"><svg><use href="#i-unlock"/></svg></span><span>تفككي المعتقدات والعادات الذهنية اللي تعيدك لنفس النتائج.</span></li><li><span class="ic"><svg><use href="#i-heart"/></svg></span><span>تبني علاقة جديدة مع نفسك.</span></li><li><span class="ic"><svg><use href="#i-book"/></svg></span><span>قصتي: كيف انتقلت للاستقلالية، الأخطاء اللي أختصرها عليك، ومعنى القفزة الكمية.</span></li></ul></div>
-    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>«ما أعرف إيش أبغى» — وحياتك مرسومة بنظرة أمك أو شريكك، مو بنظرتك.</li><li>تسوي أشياء عشان الناس والقبول، مو عشانك.</li><li>معتقدات ورثتيها بدون قناعة، وتخافي تشككي فيها.</li><li>ردات فعل قوية ونفس النمط يتكرر، وما تعرفي من وين جاي.</li><li>خوف من رأي الأهل والمجتمع عن أي اختلاف.</li></ul></div>
   </div>
   <div class="lessons">
       <article class="lesson" data-id="dv9Ard1doX8">
@@ -236,7 +243,11 @@
         <div class="meta"><h3>الجزء السادس</h3></div>
       </article>
   </div>
-</section>
+<div class="brief">
+    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-compass"/></svg></span><span>الأساس: إيش معنى الاستقلالية، وليش ما تكتمل إلا لما تكون فكرية وعاطفية ومادية مع بعض — حتى لو كنتِ متزوجة أو في بيت أهلك.</span></li><li><span class="ic"><svg><use href="#i-clock"/></svg></span><span>تتعرفي على حقيقتك من ثلاث جهات: ماضيك، حاضرك، ومستقبلك.</span></li><li><span class="ic"><svg><use href="#i-gem"/></svg></span><span>تفرّقي بين قيمك وأهدافك، وتحطي رؤية واضحة.</span></li><li><span class="ic"><svg><use href="#i-unlock"/></svg></span><span>تفككي المعتقدات والعادات الذهنية اللي تعيدك لنفس النتائج.</span></li><li><span class="ic"><svg><use href="#i-heart"/></svg></span><span>تبني علاقة جديدة مع نفسك.</span></li><li><span class="ic"><svg><use href="#i-book"/></svg></span><span>قصتي: كيف انتقلت للاستقلالية، الأخطاء اللي أختصرها عليك، ومعنى القفزة الكمية.</span></li></ul></div>
+    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>«ما أعرف إيش أبغى» — وحياتك مرسومة بنظرة أمك أو شريكك، مو بنظرتك.</li><li>تسوي أشياء عشان الناس والقبول، مو عشانك.</li><li>معتقدات ورثتيها بدون قناعة، وتخافي تشككي فيها.</li><li>ردات فعل قوية ونفس النمط يتكرر، وما تعرفي من وين جاي.</li><li>خوف من رأي الأهل والمجتمع عن أي اختلاف.</li></ul></div>
+  </div>
+  </section>
 <svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="atifiya" style="--mc:#cf6769;--mg:rgba(207,103,105,0.35)">
   <div class="mod-head">
@@ -245,11 +256,8 @@
       <div class="k">المرحلة الثانية · ٥ أجزاء · ٤٥ دقيقة</div>
       <h2>الاستقلالية العاطفية</h2>
       <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
+      <button type="button" class="vids-btn" aria-expanded="false"><span class="vt">عرض الفيديوهات</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
     </div>
-  </div>
-  <div class="brief">
-    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-heart"/></svg></span><span>معنى إنك توفري المشاعر لنفسك — الحب والأمان — بدون اعتماد على شخص.</span></li><li><span class="ic"><svg><use href="#i-sprout"/></svg></span><span>من وين يجي التعلق العاطفي: احتياجات الطفولة وهرم الاحتياجات، والفرق بينه وبين الحب الحقيقي.</span></li><li><span class="ic"><svg><use href="#i-search"/></svg></span><span>اختبار صريح: أسئلة وعلامات وخمسة أنماط تعرفي منها إذا كنتِ متعلقة.</span></li><li><span class="ic"><svg><use href="#i-sparkle"/></svg></span><span>صورة الشخص المستقل عاطفياً، وأدوات عملية: الحدود، الخلوة، احتواء المشاعر.</span></li><li><span class="ic"><svg><use href="#i-moon"/></svg></span><span>تأمل يوصّلك بجسمك وتكوني فيه الأم الحنونة لنفسك.</span></li></ul></div>
-    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>توتر وهلع لما ما يرد عليك أو يتأخر في الرسالة.</li><li>ترضي الكل وما تعرفي تقولي «لا».</li><li>تحمّلي شريكك أو أمك مسؤولية سعادتك.</li><li>تتجنبي المواجهة وتقعدي في علاقات تتعبك بحجة الإخلاص.</li><li>فراغ داخلي ما يتعبى إلا بوجود شخص.</li></ul></div>
   </div>
   <div class="lessons">
       <article class="lesson" data-id="ypqMpJul_u4">
@@ -303,7 +311,11 @@
         <div class="meta"><h3>الجزء الخامس</h3></div>
       </article>
   </div>
-</section>
+<div class="brief">
+    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-heart"/></svg></span><span>معنى إنك توفري المشاعر لنفسك — الحب والأمان — بدون اعتماد على شخص.</span></li><li><span class="ic"><svg><use href="#i-sprout"/></svg></span><span>من وين يجي التعلق العاطفي: احتياجات الطفولة وهرم الاحتياجات، والفرق بينه وبين الحب الحقيقي.</span></li><li><span class="ic"><svg><use href="#i-search"/></svg></span><span>اختبار صريح: أسئلة وعلامات وخمسة أنماط تعرفي منها إذا كنتِ متعلقة.</span></li><li><span class="ic"><svg><use href="#i-sparkle"/></svg></span><span>صورة الشخص المستقل عاطفياً، وأدوات عملية: الحدود، الخلوة، احتواء المشاعر.</span></li><li><span class="ic"><svg><use href="#i-moon"/></svg></span><span>تأمل يوصّلك بجسمك وتكوني فيه الأم الحنونة لنفسك.</span></li></ul></div>
+    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>توتر وهلع لما ما يرد عليك أو يتأخر في الرسالة.</li><li>ترضي الكل وما تعرفي تقولي «لا».</li><li>تحمّلي شريكك أو أمك مسؤولية سعادتك.</li><li>تتجنبي المواجهة وتقعدي في علاقات تتعبك بحجة الإخلاص.</li><li>فراغ داخلي ما يتعبى إلا بوجود شخص.</li></ul></div>
+  </div>
+  </section>
 <svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="madiya" style="--mc:#f7b69b;--mg:rgba(247,182,155,0.35)">
   <div class="mod-head">
@@ -312,11 +324,8 @@
       <div class="k">المرحلة الثالثة · ٦ أجزاء · ٦٨ دقيقة</div>
       <h2>الاستقلالية المادية</h2>
       <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
+      <button type="button" class="vids-btn" aria-expanded="false"><span class="vt">عرض الفيديوهات</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
     </div>
-  </div>
-  <div class="brief">
-    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-home"/></svg></span><span>الاستقلالية المادية يعني: دخل يكفي احتياجاتك الأساسية، مساحة خاصة، ومواصلة.</span></li><li><span class="ic"><svg><use href="#i-moon"/></svg></span><span>تأمل تشوفي فيه نسختك المستقلة وأسلوب حياتها.</span></li><li><span class="ic"><svg><use href="#i-map"/></svg></span><span>تحوّلي الرؤية لخطة: وين تبغي تعيشي، كم تكلفة الحياة هناك، وميزانية واقعية بالأرقام — احتياجات، رغبات، ادخار، واستثمار.</span></li><li><span class="ic"><svg><use href="#i-coins"/></svg></span><span>الوعي المالي: علاقتك بالفلوس، إيش ورثتيه عن أمك وأبوك، الامتنان، والحد الأدنى والأعلى في استحقاقك.</span></li><li><span class="ic"><svg><use href="#i-briefcase"/></svg></span><span>الوظيفة أو المشروع: كيف تلاقي الوظيفة، وكيف تبدأي مشروع يحل مشكلة عليها طلب.</span></li></ul></div>
-    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>«أنا في بيت أهلي مرتاحة» — بس قراراتك كلها من الخوف مو من الرغبة.</li><li>ما تعرفي كم تحتاجي بالضبط عشان تستقلي.</li><li>الفلوس تجي وتروح وما تعرفي وين راحت.</li><li>قلق أو خوف من الفلوس ورثتيه من البيت.</li><li>«ما عندي شي أقدمه» — وأنتِ عندك مهارات ما حسبتيها.</li></ul></div>
   </div>
   <div class="lessons">
       <article class="lesson" data-id="djw00n9E7Po">
@@ -380,7 +389,11 @@
         <div class="meta"><h3>الجزء السادس</h3></div>
       </article>
   </div>
-</section>
+<div class="brief">
+    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-home"/></svg></span><span>الاستقلالية المادية يعني: دخل يكفي احتياجاتك الأساسية، مساحة خاصة، ومواصلة.</span></li><li><span class="ic"><svg><use href="#i-moon"/></svg></span><span>تأمل تشوفي فيه نسختك المستقلة وأسلوب حياتها.</span></li><li><span class="ic"><svg><use href="#i-map"/></svg></span><span>تحوّلي الرؤية لخطة: وين تبغي تعيشي، كم تكلفة الحياة هناك، وميزانية واقعية بالأرقام — احتياجات، رغبات، ادخار، واستثمار.</span></li><li><span class="ic"><svg><use href="#i-coins"/></svg></span><span>الوعي المالي: علاقتك بالفلوس، إيش ورثتيه عن أمك وأبوك، الامتنان، والحد الأدنى والأعلى في استحقاقك.</span></li><li><span class="ic"><svg><use href="#i-briefcase"/></svg></span><span>الوظيفة أو المشروع: كيف تلاقي الوظيفة، وكيف تبدأي مشروع يحل مشكلة عليها طلب.</span></li></ul></div>
+    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>«أنا في بيت أهلي مرتاحة» — بس قراراتك كلها من الخوف مو من الرغبة.</li><li>ما تعرفي كم تحتاجي بالضبط عشان تستقلي.</li><li>الفلوس تجي وتروح وما تعرفي وين راحت.</li><li>قلق أو خوف من الفلوس ورثتيه من البيت.</li><li>«ما عندي شي أقدمه» — وأنتِ عندك مهارات ما حسبتيها.</li></ul></div>
+  </div>
+  </section>
 <svg class="divider" viewBox="0 0 520 40" aria-hidden="true"><path d="M0,30 C 130,-10 390,-10 520,30" fill="none" stroke="rgba(191,169,242,0.35)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="260" cy="10" r="3" fill="#f7b69b"/><circle cx="260" cy="10" r="8" fill="none" stroke="rgba(247,182,155,0.35)"/></svg>
 <section class="mod" id="ahl" style="--mc:#8fb4ff;--mg:rgba(143,180,255,0.35)">
   <div class="mod-head">
@@ -389,11 +402,8 @@
       <div class="k">المرحلة الرابعة · ٢ أجزاء · ٤٥ دقيقة</div>
       <h2>التعامل مع حاجز الأهل</h2>
       <div class="prog"><span class="pt">—</span><div class="bar"><i></i></div></div>
+      <button type="button" class="vids-btn" aria-expanded="false"><span class="vt">عرض الفيديوهات</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
     </div>
-  </div>
-  <div class="brief">
-    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-target"/></svg></span><span>تربطي رغبتك في الاستقلالية بقيمك وبرسالة أكبر منك.</span></li><li><span class="ic"><svg><use href="#i-shield"/></svg></span><span>تكوني مستعدة فكرياً وعاطفياً ومادياً قبل المواجهة — لأنك في الحقيقة ما تواجهيهم، أنتِ تواجهي خوفك.</span></li><li><span class="ic"><svg><use href="#i-chat"/></svg></span><span>كيف تختاري الوقت، تشاركيهم القرار بدون ما تطلبي إذنهم، وتتقبلي مقاومتهم بدون شجار: بالتدرج أو بالمقابلة في نص الطريق.</span></li><li><span class="ic"><svg><use href="#i-eyeoff"/></svg></span><span>مو لازم الكل يعرف كل شي عنك.</span></li><li><span class="ic"><svg><use href="#i-balance"/></svg></span><span>توازن الأنوثة والذكورة داخلك.</span></li><li><span class="ic"><svg><use href="#i-book"/></svg></span><span>قصتي مع أهلي: الخطأ اللي سويته، وكيف تغيرت ردة فعلهم لما رجعت مستعدة.</span></li></ul></div>
-    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>تأجلي حياتك وأنتِ تنتظري قبولهم ودعمهم.</li><li>تتهربي من المواجهة، أو تنفجري فيها.</li><li>تأنيب ضمير وإحساس إنك خنتيهم لو اخترتِ طريقك.</li><li>ما تعرفي كيف تقوليها بلغة يقدرون يستقبلونها.</li></ul></div>
   </div>
   <div class="lessons">
       <article class="lesson" data-id="KNwP60zce-M">
@@ -417,7 +427,11 @@
         <div class="meta"><h3>التعامل مع حاجز الأهل — الجزء الأول</h3></div>
       </article>
   </div>
-</section>
+<div class="brief">
+    <div class="b1"><h3>ماذا ستتعلمين في هذه المرحلة</h3><ul class="learn"><li><span class="ic"><svg><use href="#i-target"/></svg></span><span>تربطي رغبتك في الاستقلالية بقيمك وبرسالة أكبر منك.</span></li><li><span class="ic"><svg><use href="#i-shield"/></svg></span><span>تكوني مستعدة فكرياً وعاطفياً ومادياً قبل المواجهة — لأنك في الحقيقة ما تواجهيهم، أنتِ تواجهي خوفك.</span></li><li><span class="ic"><svg><use href="#i-chat"/></svg></span><span>كيف تختاري الوقت، تشاركيهم القرار بدون ما تطلبي إذنهم، وتتقبلي مقاومتهم بدون شجار: بالتدرج أو بالمقابلة في نص الطريق.</span></li><li><span class="ic"><svg><use href="#i-eyeoff"/></svg></span><span>مو لازم الكل يعرف كل شي عنك.</span></li><li><span class="ic"><svg><use href="#i-balance"/></svg></span><span>توازن الأنوثة والذكورة داخلك.</span></li><li><span class="ic"><svg><use href="#i-book"/></svg></span><span>قصتي مع أهلي: الخطأ اللي سويته، وكيف تغيرت ردة فعلهم لما رجعت مستعدة.</span></li></ul></div>
+    <div class="b2"><h3>هذه المرحلة تحلّ لك</h3><ul><li>تأجلي حياتك وأنتِ تنتظري قبولهم ودعمهم.</li><li>تتهربي من المواجهة، أو تنفجري فيها.</li><li>تأنيب ضمير وإحساس إنك خنتيهم لو اخترتِ طريقك.</li><li>ما تعرفي كيف تقوليها بلغة يقدرون يستقبلونها.</li></ul></div>
+  </div>
+  </section>
 
 <footer>
   <img src="logo.png" alt="" />
@@ -533,6 +547,15 @@
   }
   function markSeen(card, id){ var seen = loadSeen(); if (seen.indexOf(id) < 0) { seen.push(id); saveSeen(seen); } refresh(); }
   refresh();
+
+  // Videos per module are folded until «عرض الفيديوهات» is tapped; the map's links open their module.
+  function setOpen(sec, open){ sec.classList.toggle("open", open); var b = sec.querySelector(".vids-btn"); if (b) { b.setAttribute("aria-expanded", open ? "true" : "false"); b.querySelector(".vt").textContent = open ? "إخفاء الفيديوهات" : "عرض الفيديوهات"; } }
+  document.querySelectorAll("section.mod").forEach(function (sec) {
+    var b = sec.querySelector(".vids-btn"); if (!b) return;
+    b.addEventListener("click", function () { setOpen(sec, !sec.classList.contains("open")); });
+  });
+  function openFromHash(){ var id = (location.hash || "").slice(1); var sec = id && document.getElementById(id); if (sec && sec.classList.contains("mod")) setOpen(sec, true); }
+  window.addEventListener("hashchange", openFromHash); openFromHash();
   // Tap a thumbnail → the YouTube player loads in its place. Nothing loads until it's tapped.
   document.querySelectorAll(".lesson").forEach(function (card) {
     var id = card.getAttribute("data-id");
